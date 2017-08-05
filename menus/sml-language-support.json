@@ -1,0 +1,18 @@
+{
+  "menu": [
+    {
+      "label": "Build",
+      "submenu": [
+        {
+          "label": "SML",
+          "submenu": [
+            {
+              "label": "Run...",
+              "command": "sml-language-support:run"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

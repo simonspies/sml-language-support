@@ -1,0 +1,5 @@
+{
+  "atom-workspace": {
+    "cmd-b": "sml-language-support:run"
+  }
+}

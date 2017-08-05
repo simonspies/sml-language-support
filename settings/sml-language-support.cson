@@ -1,0 +1,13 @@
+'.source.cm':
+  'editor':
+    'foldEndPattern': '\\*\\)'
+    'commentStart': '(*'
+    'commentEnd': '*)'
+'.source.mlb':
+  'editor':
+    'commentStart': '(*'
+    'commentEnd': '*)'
+'.source.ml':
+  'editor':
+    'commentStart': '(*'
+    'commentEnd': '*)'

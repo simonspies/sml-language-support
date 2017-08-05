@@ -1,0 +1,30 @@
+'.source.ml':
+    'iter':
+      'prefix': 'def_iter'
+      'body': 'fun iter n s f = if n < 1 then s else iter (n-1) (f s) f\n$1'
+    'iter up':
+      'prefix': 'def_iterup'
+      'body': 'fun iterup m n s f = if m > n then s else iterup (m+1) n (f (m, s)) f\n$1'
+    'iter down':
+        'prefix': 'def_iterdn'
+        'body': 'fun iterup m n s f = if m < n then s else iterup (m-1) n (f (m, s)) f\n$1'
+    'datatype tree':
+        'prefix': 'def_tree'
+        'body': 'datatype tree = T of tree list\n$1'
+    'case':
+        'prefix': 'case'
+        'body': '(case ${1:expression} of\n    ${2:pattern1} => ${3:body1}\n   | ${4:pattern2} => ${5:body2})'
+    'function':
+        'prefix': 'fun'
+        'body':
+            """fun ${1:function_name} ${2:arguments} = ${3:body}
+               \t | ${1:function_name} ${4:arguments} = ${5:body}"""
+    'let':
+        'prefix': 'let'
+        'body': """
+          let
+          \t  $1
+          \tin
+          \t ${2:content}
+          \tend
+        """

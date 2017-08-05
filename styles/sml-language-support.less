@@ -1,0 +1,35 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+.sml-language-support {
+    background: @base-background-color;
+    padding: @component-padding;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: @text-color;
+
+    .output{
+        background-color: @input-background-color;
+        padding: (@component-padding + 5);
+        font-size: 110%;
+        flex-basis: 50%;
+        flex-grow: 1;
+        margin-bottom: 10px;
+        font-family: "Fira Code", @font-family;
+
+        .stderr {
+            color: @text-color-error;
+        }
+    }
+
+    atom-text-editor[mini].is-focused{
+        outline: none;
+        border: 1px solid #181a1f;
+        box-shadow: none;
+    }
+
+}
