@@ -205,7 +205,7 @@
           "include": "#constantString"
         },
         {
-          "match": "\\bfalse|true\\b",
+          "match": "\\bfalse|true|nil|SOME|NONE\\b",
           "name": "entity.other.attribute-name.css constant.language constant.numeric"
         },
         {
@@ -459,7 +459,7 @@
           "match": "((?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]),(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]))|(;|(?!=(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\|(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]))[:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]+)|(\\bas\\b)",
           "captures": {
             "1": {
-              "name": "string.regexp"
+              "name": "punctuation.definition.tag"
             },
             "2": {
               "name": "variable.other.class.js message.error variable.interpolation string.regexp"
@@ -504,20 +504,6 @@
         {
           "patterns": [
             {
-              "begin": "\\bcase\\b",
-              "end": "\\bof\\b",
-              "captures": {
-                "0": {
-                  "name": "keyword.control.switch"
-                }
-              },
-              "patterns": [
-                {
-                  "include": "#exp"
-                }
-              ]
-            },
-            {
               "begin": "(?<=[^[:word:]]of|^of)",
               "end": "(?=,|\\}|\\)|\\]|\\b(?:abstype|and|datatype|exception|fun|infix|infixr|local|nonfix|open|type|val|include|local|functor|signature|structure|end|in)\\b(?:$|[[:space:]]|(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]),|\\}|\\)|\\](?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])))",
               "endCaptures": {
@@ -534,7 +520,7 @@
           ]
         },
         {
-          "match": "\\b(?:if|then|else)\\b",
+          "match": "\\b(?:if|then|else|case|of)\\b",
           "name": "keyword"
         },
         {
@@ -818,7 +804,7 @@
           "match": "((?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]),(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]))|((?!=(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\|(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]))[:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]+)|(\\bas\\b)",
           "captures": {
             "1": {
-              "name": "string.regexp"
+              "name": "punctuation.definition.tag"
             },
             "2": {
               "name": "variable.other.class.js message.error variable.interpolation string.regexp"
@@ -1390,7 +1376,11 @@
         },
         {
           "match": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])->|\\*(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])",
-          "name": "markup.inserted string.regexp"
+          "name": "keyword.other"
+        },
+        {
+          "name": "entity.name.type",
+          "match": "\\b(int|bool|real|string|char|array|list|vector|unit|word)\\b"
         },
         {
           "begin": "\\(",
