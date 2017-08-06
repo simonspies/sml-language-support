@@ -1,17 +1,24 @@
 {
-  "name": "sml-language-support",
-  "main": "./lib/sml-language-support",
-  "version": "0.0.1",
-  "description": "Language Support for Standard ML",
-  "keywords": [
-  ],
-  "activationCommands": {
-    "atom-workspace": "sml-language-support:run"
-  },
-  "repository": "",
-  "license": "MIT",
-  "engines": {
-    "atom": ">=1.0.0 <2.0.0"
-  },
-  "dependencies": {}
+    "name": "sml-language-support",
+    "main": "./lib/sml-language-support",
+    "version": "0.0.1",
+    "description": "Language Support for Standard ML",
+    "keywords": [],
+    "activationCommands": {
+        "atom-workspace": "sml-language-support:run"
+    },
+    "repository": "",
+    "license": "MIT",
+    "engines": {
+        "atom": ">=1.0.0 <2.0.0"
+    },
+
+    "dependencies": {},
+    "configSchema": {
+        "mosml": {
+            "type": "string",
+            "default": "mosml",
+            "description": "The place where your MoSML interpreter lives."
+        }
+    }
 }
