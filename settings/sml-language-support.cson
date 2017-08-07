@@ -8,6 +8,9 @@
     'commentStart': '(*'
     'commentEnd': '*)'
 '.source.sml':
+  'autoIndent': true
+  'showIndentGuide': true
+  'tabLength': 2
   'editor':
     'foldEndPattern': '\\*\\)'
     'commentStart': '(*'
