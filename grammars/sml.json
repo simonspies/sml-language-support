@@ -2,12 +2,8 @@
   "name": "Standard ML",
   "scopeName": "source.sml",
   "fileTypes": [
-    ".fun",
-    ".sig",
     ".sml",
-    ".cm",
-    ".lex",
-    ".grm"
+    ".ml"
   ],
   "patterns": [
     {
@@ -28,17 +24,17 @@
           "include": "#comment"
         },
         {
-          "include": "#scon"
+          "include": "#Scopen"
         },
         {
           "include": "#constant"
         },
         {
           "begin": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])#(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])",
-          "end": "((?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]])))|(?<=[[:digit:]\"])",
+          "end": "((?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nil|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]])))|(?<=[[:digit:]\"])",
           "beginCaptures": {
             "0": {
-              "name": "variable.other.class.js message.error variable.interpolation string.regexp"
+              "name": "variable.interpolation"
             }
           },
           "endCaptures": {
@@ -99,7 +95,7 @@
           "end": "\\}",
           "captures": {
             "0": {
-              "name": "entity.other.attribute-name.css constant.language constant.numeric"
+              "name": "punctuation.definition.tag"
             }
           },
           "patterns": [
@@ -122,7 +118,7 @@
               "end": "(?=\\))",
               "beginCaptures": {
                 "0": {
-                  "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+                  "name": "variable.interpolation"
                 }
               },
               "patterns": [
@@ -169,8 +165,8 @@
               "include": "#comment"
             },
             {
-              "match": "(?!=(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\|(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]))[:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]+|(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
-              "name": "entity.other.attribute-name.css constant.language constant.numeric"
+              "match": "(?!=(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\|(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]))[:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]+|(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nil|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
+              "name": "entity.name.class"
             }
           ]
         },
@@ -205,26 +201,26 @@
           "include": "#constantString"
         },
         {
-          "match": "\\bfalse|true|nil|SOME|NONE\\b",
-          "name": "entity.other.attribute-name.css constant.language constant.numeric"
+          "match": "\\bfalse|true|nil\\b",
+          "name": "constant"
         },
         {
           "include": "#qualifiedConstant"
         },
         {
           "match": "\\(\\)",
-          "name": "entity.other.attribute-name.css constant.language constant.numeric"
+          "name": "constant"
         },
         {
           "match": "\\[\\]",
-          "name": "entity.other.attribute-name.css constant.language constant.numeric"
+          "name": "constant"
         },
         {
           "begin": "\\{",
           "end": "\\}",
           "captures": {
             "0": {
-              "name": "entity.other.attribute-name.css constant.language constant.numeric"
+              "name": "punctuation.definition.tag"
             }
           },
           "patterns": [
@@ -238,7 +234,7 @@
           "end": "\\]",
           "captures": {
             "0": {
-              "name": "entity.other.attribute-name.css constant.language constant.numeric"
+              "name": "punctuation.definition.tag"
             }
           },
           "patterns": [
@@ -270,7 +266,7 @@
           "end": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])=(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])",
           "endCaptures": {
             "0": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             }
           },
           "patterns": [
@@ -278,8 +274,8 @@
               "include": "#comment"
             },
             {
-              "match": "(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
-              "name": "entity.name.function"
+              "match": "(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nil|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
+              "name": "entity.name.type"
             },
             {
               "include": "#ty"
@@ -291,7 +287,7 @@
           "end": "\\band\\b|(?=\\}|\\)|\\]|\\b(?:abstype|and|datatype|exception|fun|infix|infixr|local|nonfix|open|type|val|include|local|functor|signature|structure|end|in)\\b(?:$|[[:space:]]|(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\}|\\)|\\](?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])))",
           "endCaptures": {
             "0": {
-              "name": "variable.other.class.js variable.interpolation storage.modifier message.error"
+              "name": "keyword"
             }
           },
           "patterns": [
@@ -347,7 +343,7 @@
           "patterns": [
             {
               "match": "(?!=(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\|(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]))[:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]+",
-              "name": "variable.other.class.js message.error variable.interpolation string.regexp"
+              "name": "variable.interpolation"
             }
           ]
         },
@@ -462,7 +458,7 @@
               "name": "punctuation.definition.tag"
             },
             "2": {
-              "name": "variable.other.class.js message.error variable.interpolation string.regexp"
+              "name": "variable.interpolation"
             },
             "3": {
               "name": "keyword"
@@ -504,11 +500,25 @@
         {
           "patterns": [
             {
+              "begin": "\\bcase\\b",
+              "end": "\\bof\\b",
+              "captures": {
+                "0": {
+                  "name": "keyword.control.switch"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "#exp"
+                }
+              ]
+            },
+            {
               "begin": "(?<=[^[:word:]]of|^of)",
               "end": "(?=,|\\}|\\)|\\]|\\b(?:abstype|and|datatype|exception|fun|infix|infixr|local|nonfix|open|type|val|include|local|functor|signature|structure|end|in)\\b(?:$|[[:space:]]|(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]),|\\}|\\)|\\](?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])))",
               "endCaptures": {
                 "0": {
-                  "name": "variable.other.class.js message.error variable.interpolation string.regexp"
+                  "name": "variable.interpolation"
                 }
               },
               "patterns": [
@@ -520,16 +530,16 @@
           ]
         },
         {
-          "match": "\\b(?:if|then|else|case|of)\\b",
+          "match": "\\b(?:if|then|else)\\b",
           "name": "keyword"
         },
         {
           "match": "\\borelse\\b",
-          "name": "variable.other.class.js message.error variable.interpolation string.regexp"
+          "name": "variable.interpolation"
         },
         {
           "match": "\\bandalso\\b",
-          "name": "variable.other.class.js message.error variable.interpolation string.regexp"
+          "name": "variable.interpolation"
         },
         {
           "match": "\\b(?:while|do)\\b",
@@ -544,10 +554,10 @@
           "end": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])(:)|(=)(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])",
           "endCaptures": {
             "1": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             },
             "2": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             }
           },
           "patterns": [
@@ -570,7 +580,7 @@
                   "include": "#spec"
                 },
                 {
-                  "begin": "(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
+                  "begin": "(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nil|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
                   "end": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]):(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])",
                   "beginCaptures": {
                     "0": {
@@ -579,7 +589,7 @@
                   },
                   "endCaptures": {
                     "0": {
-                      "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+                      "name": "variable.interpolation"
                     }
                   }
                 },
@@ -601,7 +611,7 @@
           "end": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])=(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])",
           "endCaptures": {
             "0": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             }
           },
           "patterns": [
@@ -650,7 +660,7 @@
           "end": "(?=\\}|\\)|\\]|\\b(?:abstype|and|datatype|exception|fun|infix|infixr|local|nonfix|open|type|val|include|local|functor|signature|structure|end|in)\\b(?:$|[[:space:]]|(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\}|\\)|\\](?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])))",
           "beginCaptures": {
             "0": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "keyword"
             }
           },
           "patterns": [
@@ -668,10 +678,10 @@
           "end": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])(:)|(=)(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])",
           "endCaptures": {
             "1": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             },
             "2": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             }
           },
           "patterns": [
@@ -680,7 +690,7 @@
             },
             {
               "begin": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]\\||^\\||[^[:word:]]and|^and|[^[:word:]]fun|^fun)",
-              "end": "(?!=(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\|(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]))[:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]+|(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))|(?=[^[:space:][:alpha:]])",
+              "end": "(?!=(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\|(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]))[:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]+|(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nil|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))|(?=[^[:space:][:alpha:]])",
               "endCaptures": {
                 "0": {
                   "name": "entity.name.function"
@@ -697,7 +707,7 @@
           "end": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])=(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])|(?=\\}|\\)|\\]|\\b(?:abstype|and|datatype|exception|fun|infix|infixr|local|nonfix|open|type|val|include|local|functor|signature|structure|end|in)\\b(?:$|[[:space:]]|(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\}|\\)|\\](?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])))",
           "endCaptures": {
             "0": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             }
           },
           "patterns": [
@@ -714,7 +724,7 @@
               "name": "keyword.control.switch"
             },
             "2": {
-              "name": "variable.other.class.js variable.interpolation storage.modifier message.error"
+              "name": "keyword"
             }
           },
           "patterns": [
@@ -774,7 +784,7 @@
           "end": "\\}",
           "captures": {
             "0": {
-              "name": "entity.other.attribute-name.css constant.language constant.numeric"
+              "name": "punctuation.definition.tag"
             }
           },
           "patterns": [
@@ -788,7 +798,7 @@
           "end": "\\]",
           "captures": {
             "0": {
-              "name": "entity.other.attribute-name.css constant.language constant.numeric"
+              "name": "punctuation.definition.tag"
             }
           },
           "patterns": [
@@ -807,7 +817,7 @@
               "name": "punctuation.definition.tag"
             },
             "2": {
-              "name": "variable.other.class.js message.error variable.interpolation string.regexp"
+              "name": "variable.interpolation"
             },
             "3": {
               "name": "keyword"
@@ -815,7 +825,7 @@
           }
         },
         {
-          "match": "((?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])_(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]))|((?=[[:lower:]])(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]])))",
+          "match": "((?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])_(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]))|((?=[[:lower:]])(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nil|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]])))",
           "captures": {
             "1": {
               "name": "comment punctuation.definition.tag"
@@ -842,7 +852,7 @@
               "end": "(?=\\))",
               "beginCaptures": {
                 "0": {
-                  "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+                  "name": "variable.interpolation"
                 }
               },
               "patterns": [
@@ -865,23 +875,23 @@
           "end": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])(,)|(:)|(=)(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])|(?=\\})",
           "endCaptures": {
             "1": {
-              "name": "string.regexp"
+              "name": "punctuation.definition.tag"
             },
             "2": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             },
             "3": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             }
           },
           "patterns": [
             {
-              "match": "(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
+              "match": "(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nil|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
               "name": "markup.inserted constant.language support.property-value entity.name.filename"
             },
             {
               "match": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\.\\.\\.(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])",
-              "name": "entity.other.attribute-name.css constant.language constant.numeric"
+              "name": "entity.name.class"
             }
           ]
         },
@@ -890,7 +900,7 @@
           "end": ",|(?=\\})",
           "endCaptures": {
             "0": {
-              "name": "string.regexp"
+              "name": "punctuation.definition.tag"
             }
           },
           "patterns": [
@@ -904,7 +914,7 @@
           "end": ",|(?=\\})",
           "endCaptures": {
             "0": {
-              "name": "string.regexp"
+              "name": "punctuation.definition.tag"
             }
           },
           "patterns": [
@@ -921,8 +931,8 @@
           "include": "#qualifiedPrefix"
         },
         {
-          "match": "(?=[[:upper:]])(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
-          "name": "entity.other.attribute-name.css constant.language constant.numeric"
+          "match": "(?=[[:upper:]])(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nil|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
+          "name": "entity.name.class"
         }
       ]
     },
@@ -932,13 +942,13 @@
           "include": "#qualifiedPrefix"
         },
         {
-          "match": "(?=[[:upper:]])(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
+          "match": "(?=[[:upper:]])(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nil|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
           "name": "entity.name.class constant.numeric"
         }
       ]
     },
     "qualifiedPrefix": {
-      "begin": "(?=[[:upper:]])(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))(?=[[:space:]]*\\.)",
+      "begin": "(?=[[:upper:]])(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nil|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))(?=[[:space:]]*\\.)",
       "end": "\\.",
       "beginCaptures": {
         "0": {
@@ -957,7 +967,7 @@
           "include": "#qualifiedPrefix"
         },
         {
-          "match": "(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
+          "match": "(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nil|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
           "name": "support.type"
         }
       ]
@@ -969,23 +979,23 @@
           "end": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])(,)|(:)|(=)(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])|(?=\\})",
           "endCaptures": {
             "1": {
-              "name": "string.regexp"
+              "name": "punctuation.definition.tag"
             },
             "2": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             },
             "3": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             }
           },
           "patterns": [
             {
-              "match": "(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
+              "match": "(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nil|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
               "name": "markup.inserted constant.language support.property-value entity.name.filename"
             },
             {
               "match": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\.\\.\\.(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])",
-              "name": "entity.other.attribute-name.css constant.language constant.numeric"
+              "name": "entity.name.class"
             }
           ]
         },
@@ -994,7 +1004,7 @@
           "end": ",|(?=\\})",
           "endCaptures": {
             "0": {
-              "name": "string.regexp"
+              "name": "punctuation.definition.tag"
             }
           },
           "patterns": [
@@ -1008,7 +1018,7 @@
           "end": ",|(?=\\})",
           "endCaptures": {
             "0": {
-              "name": "string.regexp"
+              "name": "punctuation.definition.tag"
             }
           },
           "patterns": [
@@ -1019,7 +1029,7 @@
         }
       ]
     },
-    "scon": {
+    "Scopen": {
       "patterns": []
     },
     "sigbind": {
@@ -1029,7 +1039,7 @@
           "end": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])=(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])",
           "endCaptures": {
             "0": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             }
           },
           "patterns": [
@@ -1046,7 +1056,7 @@
           "end": "\\band\\b|(?=\\}|\\)|\\]|\\b(?:abstype|and|datatype|exception|fun|infix|infixr|local|nonfix|open|type|val|include|local|functor|signature|structure|end|in)\\b(?:$|[[:space:]]|(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\}|\\)|\\](?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])))",
           "endCaptures": {
             "0": {
-              "name": "variable.other.class.js variable.interpolation storage.modifier message.error"
+              "name": "keyword"
             }
           },
           "patterns": [
@@ -1060,7 +1070,7 @@
           "end": "\\band\\b|(?=\\}|\\)|\\]|\\b(?:abstype|and|datatype|exception|fun|infix|infixr|local|nonfix|open|type|val|include|local|functor|signature|structure|end|in)\\b(?:$|[[:space:]]|(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\}|\\)|\\](?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])))",
           "endCaptures": {
             "0": {
-              "name": "variable.other.class.js variable.interpolation storage.modifier message.error"
+              "name": "keyword"
             }
           },
           "patterns": [
@@ -1107,7 +1117,7 @@
           ],
           "captures": {
             "0": {
-              "name": "variable.other.class.js variable.interpolation keyword.control storage.type message.error"
+              "name": "keyword"
             }
           }
         },
@@ -1178,10 +1188,10 @@
           "end": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])(:>?)|(=)(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])",
           "endCaptures": {
             "1": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             },
             "2": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             }
           },
           "patterns": [
@@ -1198,7 +1208,7 @@
           "end": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])=(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])|(?=\\}|\\)|\\]|\\b(?:abstype|and|datatype|exception|fun|infix|infixr|local|nonfix|open|type|val|include|local|functor|signature|structure|end|in)\\b(?:$|[[:space:]]|(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\}|\\)|\\](?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])))",
           "endCaptures": {
             "0": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             }
           },
           "patterns": [
@@ -1212,7 +1222,7 @@
           "end": "\\band\\b|(?=\\}|\\)|\\]|\\b(?:abstype|and|datatype|exception|fun|infix|infixr|local|nonfix|open|type|val|include|local|functor|signature|structure|end|in)\\b(?:$|[[:space:]]|(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\}|\\)|\\](?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])))",
           "endCaptures": {
             "0": {
-              "name": "variable.other.class.js variable.interpolation storage.modifier message.error"
+              "name": "keyword"
             }
           },
           "patterns": [
@@ -1288,7 +1298,7 @@
           "end": "(?=\\}|\\)|\\]|\\b(?:abstype|and|datatype|exception|fun|infix|infixr|local|nonfix|open|type|val|include|local|functor|signature|structure|end|in)\\b(?:$|[[:space:]]|(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\}|\\)|\\](?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])))",
           "beginCaptures": {
             "0": {
-              "name": "variable.other.class.js variable.interpolation keyword.control storage.type message.error"
+              "name": "keyword"
             }
           },
           "patterns": [
@@ -1317,12 +1327,12 @@
           ],
           "beginCaptures": {
             "0": {
-              "name": "variable.other.class.js variable.interpolation keyword.control storage.type message.error"
+              "name": "keyword"
             }
           },
           "endCaptures": {
             "0": {
-              "name": "variable.other.class.js variable.interpolation keyword.control storage.type message.error"
+              "name": "keyword"
             }
           }
         },
@@ -1350,7 +1360,7 @@
           "include": "#comment"
         },
         {
-          "match": "(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)(')([[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]])))",
+          "match": "(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nil|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)(')([[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]])))",
           "captures": {
             "1": {
               "name": "punctuation.definition.tag"
@@ -1365,7 +1375,7 @@
           "end": "\\}",
           "captures": {
             "0": {
-              "name": "entity.other.attribute-name.css constant.language constant.numeric"
+              "name": "entity.name.class"
             }
           },
           "patterns": [
@@ -1376,11 +1386,11 @@
         },
         {
           "match": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])->|\\*(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])",
-          "name": "keyword.other"
+          "name": "keyword"
         },
         {
-          "name": "entity.name.type",
-          "match": "\\b(int|bool|real|string|char|array|list|vector|unit|word)\\b"
+          "match": "\\b[[:word:]|']+\\b",
+          "name": "entity.name.type"
         },
         {
           "begin": "\\(",
@@ -1396,7 +1406,7 @@
             },
             {
               "match": ",",
-              "name": "string.regexp"
+              "name": "punctuation.definition.tag"
             }
           ]
         },
@@ -1416,7 +1426,7 @@
           "end": "(?=\\}|\\)|\\]|\\b(?:abstype|and|datatype|exception|fun|infix|infixr|local|nonfix|open|type|val|include|local|functor|signature|structure|end|in)\\b(?:$|[[:space:]]|(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\}|\\)|\\](?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])))|((?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])=(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]))",
           "endCaptures": {
             "0": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             }
           },
           "patterns": [
@@ -1424,8 +1434,8 @@
               "include": "#comment"
             },
             {
-              "match": "(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
-              "name": "entity.name.function"
+              "match": "(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nil|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]]))",
+              "name": "entity.name.type"
             },
             {
               "include": "#ty"
@@ -1456,19 +1466,19 @@
           "end": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])(:)|(=)(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])|(?=\\}|\\)|\\]|\\b(?:abstype|and|datatype|exception|fun|infix|infixr|local|nonfix|open|type|val|include|local|functor|signature|structure|end|in)\\b(?:$|[[:space:]]|(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\}|\\)|\\](?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])))",
           "endCaptures": {
             "1": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             },
             "2": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             }
           },
           "patterns": [
             {
               "begin": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$]\\||^\\||[^[:word:]]and|^and|[^[:word:]]val|^val)",
-              "end": "(\\brec\\b)|((?=[[:lower:]])(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]])))|(?=[^[:space:][:alpha:]])",
+              "end": "(\\brec\\b)|((?=[[:lower:]])(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nil|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]])))|(?=[^[:space:][:alpha:]])",
               "endCaptures": {
                 "1": {
-                  "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+                  "name": "keyword"
                 },
                 "2": {
                   "name": "entity.name.function"
@@ -1482,7 +1492,7 @@
             },
             {
               "begin": "(?<=[^[:word:]]rec|^rec)",
-              "end": "((?=[[:lower:]])(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]])))|(?=[^[:space:][:alpha:]])",
+              "end": "((?=[[:lower:]])(?!=\\b(?:abstype|and|andalso|as|case|datatype|do|else|end|eqtype|exception|false|fn|fun|functor|handle|if|in|infix|infixr|include|let|local|nil|nonfix|of|op|open|orelse|raise|rec|sharing|sig|signature|struct|structure|then|true|type|val|where|while|with|withtype)\\b)\\b[[:alpha:]][[:alnum:]'_]*(?:\\b|(?=[[:space:]])))|(?=[^[:space:][:alpha:]])",
               "endCaptures": {
                 "0": {
                   "name": "entity.name.function"
@@ -1499,7 +1509,7 @@
           "end": "(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])=(?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])|(?=\\}|\\)|\\]|\\b(?:abstype|and|datatype|exception|fun|infix|infixr|local|nonfix|open|type|val|include|local|functor|signature|structure|end|in)\\b(?:$|[[:space:]]|(?<=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])\\}|\\)|\\](?=[^:!?'@/\\-\\*\\\\\\+\\|&#%`^<=>~$])))",
           "endCaptures": {
             "0": {
-              "name": "variable.other.class.js variable.interpolation keyword.operator keyword.control message.error"
+              "name": "variable.interpolation"
             }
           },
           "patterns": [
@@ -1516,7 +1526,7 @@
               "name": "keyword.control.switch"
             },
             "2": {
-              "name": "variable.other.class.js variable.interpolation storage.modifier message.error"
+              "name": "keyword"
             }
           },
           "patterns": [

@@ -7,6 +7,10 @@
     "activationCommands": {
         "atom-workspace": "sml-language-support:run"
     },
+    "scripts": {
+        "grammar": "tsc -w -p scripts/grammar && scripts/grammar/grammar.js"
+    },
+    "activationHooks": ["sml-language-support:grammar-used"],
     "repository": "",
     "license": "MIT",
     "engines": {
@@ -19,6 +23,13 @@
             "type": "string",
             "default": "mosml",
             "description": "The place where your MoSML interpreter lives."
+        }
+    },
+    "providedServices": {
+        "autocomplete.provider": {
+            "versions": {
+                "2.0.0": "provideAutocompletion"
+            }
         }
     }
 }
