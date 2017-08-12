@@ -1,6 +1,6 @@
 {
     "name": "sml-language-support",
-    "main": "./lib/sml-language-support",
+    "main": "lib/sml-language-support",
     "version": "0.0.1",
     "description": "Language Support for Standard ML",
     "keywords": [],
@@ -11,7 +11,7 @@
         "grammar": "tsc -w -p scripts/grammar && scripts/grammar/grammar.js"
     },
     "activationHooks": ["sml-language-support:grammar-used"],
-    "repository": "",
+    "repository": "https://github.com/SimonSpies/sml-language-support.git",
     "license": "MIT",
     "engines": {
         "atom": ">=1.0.0 <2.0.0"
@@ -22,7 +22,7 @@
         "mosml": {
             "type": "string",
             "default": "mosml",
-            "description": "The place where your MoSML interpreter lives."
+            "description": "The place where your MoscowML interpreter lives."
         }
     },
     "providedServices": {

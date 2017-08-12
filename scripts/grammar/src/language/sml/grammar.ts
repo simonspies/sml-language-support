@@ -1,5 +1,8 @@
 // tslint:disable object-literal-sort-keys
-
+/**
+ * Modified Version of the original by @freebroccolo
+ * Names & Grammar changed
+ */
 import { grammar as schema } from "../../schema";
 
 export const Class = {

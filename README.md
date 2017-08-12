@@ -1,5 +1,14 @@
-# sml-language-support package
+# SML Language Support for Atom
 
-A short description of your package.
 
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+![A screenhost of the package](assets/screenshot.png)
+
+## This package provides language support for SML
+ * Syntax Highlighting
+ * REPL Execution in MoscowML
+ * Primitive Autocompletion
+ * SML Snippets
+  
+
+
+Grammars are generated with the awesome typescript grammar of [@freebroccolo](https://github.com/freebroccolo)
