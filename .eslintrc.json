@@ -1,0 +1,30 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "parser": "babel-eslint",
+    "globals": {
+        "atom": true
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "extends": "airbnb",
+    "rules": {
+        "indent": ["warn", 4],
+        "no-unexpected-multiline": "error",
+        "import/no-extraneous-dependencies": "off",
+        "import/no-unresolved": "off",
+        "import/extensions": "off",
+        "class-methods-use-this": "off",
+        "jsx-a11y/href-no-hash": "off",
+        "quotes": ["error", "double"]
+        
+    }
+}
