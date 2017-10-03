@@ -1,40 +1,39 @@
 {
-    "name": "sml-language-support",
-    "main": "lib/sml-language-support",
-    "version": "0.0.0",
-    "description": "Language Support for Standard ML",
-    "keywords": [],
-    "activationCommands": {
-        "atom-workspace": "sml-language-support:run"
-    },
-    "scripts": {
-        "grammar": "node_modules/.bin/tsc -w -p scripts/grammar && scripts/grammar/grammar.js"
-    },
-    "activationHooks": [
-        "sml-language-support:grammar-used"
-    ],
-    "repository": "https://github.com/SimonSpies/sml-language-support.git",
-    "license": "MIT",
-    "engines": {
-        "atom": ">=1.0.0 <2.0.0"
-    },
-    "configSchema": {
-        "mosml": {
-            "type": "string",
-            "default": "mosml",
-            "description": "The place where your MoscowML interpreter lives."
-        }
-    },
-    "providedServices": {
-    },
-    "dependencies": {},
-    "devDependencies": {
-        "babel-eslint": "^7.2.3",
-        "eslint": "^3.19.0 || ^4.3.0",
-        "eslint-config-airbnb": "^15.1.0",
-        "eslint-plugin-import": "^2.7.0",
-        "eslint-plugin-jsx-a11y": "^5.1.1",
-        "eslint-plugin-react": "^7.1.0",
-        "typescript": "^2.4.2"
+  "name": "sml-language-support",
+  "main": "lib/sml-language-support",
+  "version": "0.1.0",
+  "description": "Language Support for Standard ML",
+  "keywords": [],
+  "activationCommands": {
+    "atom-workspace": "sml-language-support:run"
+  },
+  "scripts": {
+    "grammar": "node_modules/.bin/tsc -w -p scripts/grammar && scripts/grammar/grammar.js"
+  },
+  "activationHooks": [
+    "sml-language-support:grammar-used"
+  ],
+  "repository": "https://github.com/SimonSpies/sml-language-support.git",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "configSchema": {
+    "mosml": {
+      "type": "string",
+      "default": "mosml",
+      "description": "The place where your MoscowML interpreter lives."
     }
+  },
+  "providedServices": {},
+  "dependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0 || ^4.3.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "typescript": "^2.4.2"
+  }
 }
