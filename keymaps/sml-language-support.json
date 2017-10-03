@@ -1,5 +1,6 @@
 {
-  "atom-workspace": {
-    "cmd-b": "sml-language-support:run"
+  "atom-text-editor[data-grammar='source sml']": {
+    "cmd-b": "sml-language-support:run",
+    "ctrl-b": "sml-language-support:run"
   }
 }
