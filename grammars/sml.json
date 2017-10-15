@@ -2,8 +2,8 @@
   "name": "Standard ML",
   "scopeName": "source.sml",
   "fileTypes": [
-    ".sml",
-    ".ml"
+    "sml",
+    "ml"
   ],
   "patterns": [
     {
